@@ -1,0 +1,22 @@
+---
+title: "m10 factors"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+## R Markdown
+
+```{r}
+nycdata<-read_csv("https://data.cityofnewyork.us/resource/erm2-nwe9.csv")
+head(nycdata)
+```
+```{r}
+nycdataclean<-nycdata %>% 
+  mutate(complaint_type=as.factor(complaint_type))
+head(nycdataclean)
+```
+
