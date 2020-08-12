@@ -1,11 +1,12 @@
 ---
-title: "m10 factors"
+title: "time_spans"
 output: html_document
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
+library(lubridate)
 ```
 
 ## R Markdown
@@ -15,18 +16,10 @@ nycdata<-read_csv("https://data.cityofnewyork.us/resource/erm2-nwe9.csv")
 head(nycdata)
 ```
 
-
-
 ```{r}
-nycdataclean<-nycdata %>% 
-  mutate(complaint_type=as.factor(complaint_type))
-head(nycdataclean)
+nycdata1 <- nycdata %>%
+  mutate(created_date=as_date(ymd_hms(created_date)))
+head(nycdata1)
 ```
 
-
-```{r}
-nycdataclean<-nycdataclean %>% 
-  mutate(agency_name=as.factor(agency_name))
-head(nycdataclean)
-```
-
+mutating data and creating new variables 
