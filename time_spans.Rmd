@@ -23,3 +23,9 @@ head(nycdata1)
 ```
 
 mutating data and creating new variables 
+
+```{r}
+ggplot(data = nycdata1)+
+geom_bar(mapping = aes(x=complaint_type))
+```
+
