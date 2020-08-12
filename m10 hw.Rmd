@@ -10,6 +10,8 @@ library(tidyverse)
 
 ## R Markdown
 
+inserting the data
+
 ```{r}
 nycdata<-read_csv("https://data.cityofnewyork.us/resource/erm2-nwe9.csv")
 head(nycdata)
@@ -30,3 +32,4 @@ nycdataclean<-nycdataclean %>%
 head(nycdataclean)
 ```
 
+after doing this sort works much more easily and categroy names are easier to understand.
